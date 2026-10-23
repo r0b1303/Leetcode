@@ -6,7 +6,7 @@ public class Solution {
             if(dict.ContainsKey(target - nums[i])){
                 return [i, dict[target - nums[i]]];
             }
-            else{
+            if(!dict.ContainsKey(nums[i])){
                 dict.Add(nums[i], i);
             }
         }
