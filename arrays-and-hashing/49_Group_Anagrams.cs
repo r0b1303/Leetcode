@@ -3,11 +3,12 @@ public class Solution {
         Dictionary<string, List<string>> dict = new();
 
         for(int i = 0; i < strs.Length; i++){
-            if(dict.ContainsKey(SortString(strs[i]))){
-                dict[SortString(strs[i])].Add(strs[i]);
+            string sortedString = SortString(strs[i]);
+            if(dict.ContainsKey(sortedString)){
+                dict[sortedString].Add(strs[i]);
             }
             else{
-                dict.Add(SortString(strs[i]), new List<string> {strs[i]});
+                dict.Add(sortedString, new List<string> {strs[i]});
             }
         }
         List<IList<string>> list = new();
