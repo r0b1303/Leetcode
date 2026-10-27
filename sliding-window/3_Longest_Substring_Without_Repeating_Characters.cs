@@ -4,16 +4,13 @@ public class Solution {
         int l = 0;
         int max = 0;
         for(int i = 0; i < s.Length; i++){
-            if(!(hs.Contains(s[i]))){
-                hs.Add(s[i]);
-            }
-            else{
+            if(hs.Contains(s[i])){
                 while(hs.Contains(s[i])){
                     hs.Remove(s[l]);
                     l++;
                 }
-                hs.Add(s[i]);
             }
+            hs.Add(s[i]);
             if((i - l) + 1 > max){
                 max = (i - l) + 1;
             }
